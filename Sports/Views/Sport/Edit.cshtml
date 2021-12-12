@@ -1,4 +1,4 @@
-﻿@model SportsMVC.Models.m_Team
+﻿@model SportsMVC.Models.m_Sport
 
 @{
     ViewData["Title"] = "Edit";
@@ -6,7 +6,7 @@
 
 <h1>Edit</h1>
 
-<h4>m_Team</h4>
+<h4>m_Sport</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -19,9 +19,14 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SportId" class="control-label"></label>
-                <select asp-for="SportId" class="form-control" asp-items="ViewBag.SportId"></select>
-                <span asp-validation-for="SportId" class="text-danger"></span>
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RepoId" class="control-label"></label>
+                <select asp-for="RepoId" class="form-control" asp-items="ViewBag.RepoId"></select>
+                <span asp-validation-for="RepoId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

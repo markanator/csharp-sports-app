@@ -60,16 +60,16 @@ namespace Sports
 
             app.UseEndpoints(endpoints =>
             {
-                //endpoints.MapDefaultControllerRoute();
-                endpoints.MapControllerRoute(
-                    name: "default", 
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapControllerRoute(
-                    name: "sports",
-                    pattern: "{controller=Sports}/{action=Index}/{id?}");
-                endpoints.MapControllerRoute(
-                    name: "teams",
-                    pattern: "{controller=Teams}/{action=Index}/{id?}");
+                endpoints.MapDefaultControllerRoute();
+                //endpoints.MapControllerRoute(
+                //    name: "default", 
+                //    pattern: "{controller=Home}/{action=Index}/{id?}");
+                //endpoints.MapControllerRoute(
+                //    name: "sports",
+                //    pattern: "{controller=Sports}/{action=Index}/{id?}");
+                //endpoints.MapControllerRoute(
+                //    name: "teams",
+                //    pattern: "{controller=Teams}/{action=Index}/{id?}");
 
             });
         }

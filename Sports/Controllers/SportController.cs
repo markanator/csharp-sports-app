@@ -10,23 +10,23 @@ using SportsMVC.Models;
 
 namespace SportsMVC.Controllers
 {
-    public class TeamsController : Controller
+    public class SportController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public TeamsController(ApplicationDbContext context)
+        public SportController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Teams
+        // GET: Sport
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Teams.Include(m => m.Sport);
+            var applicationDbContext = _context.Sports.Include(m => m.Repo);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Teams/Details/5
+        // GET: Sport/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +34,42 @@ namespace SportsMVC.Controllers
                 return NotFound();
             }
 
-            var m_Team = await _context.Teams
-                .Include(m => m.Sport)
+            var m_Sport = await _context.Sports
+                .Include(m => m.Repo)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (m_Team == null)
+            if (m_Sport == null)
             {
                 return NotFound();
             }
 
-            return View(m_Team);
+            return View(m_Sport);
         }
 
-        // GET: Teams/Create
+        // GET: Sport/Create
         public IActionResult Create()
         {
-            ViewData["SportId"] = new SelectList(_context.Sports, "Id", "Name");
+            ViewData["RepoId"] = new SelectList(_context.US_Sports, "Id", "RepoName");
             return View();
         }
 
-        // POST: Teams/Create
+        // POST: Sport/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,SportId")] m_Team m_Team)
+        public async Task<IActionResult> Create([Bind("Id,Name,Description,RepoId")] m_Sport m_Sport)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(m_Team);
+                _context.Add(m_Sport);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["SportId"] = new SelectList(_context.Sports, "Id", "Name", m_Team.SportId);
-            return View(m_Team);
+            ViewData["RepoId"] = new SelectList(_context.US_Sports, "Id", "RepoName", m_Sport.RepoId);
+            return View(m_Sport);
         }
 
-        // GET: Teams/Edit/5
+        // GET: Sport/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +77,23 @@ namespace SportsMVC.Controllers
                 return NotFound();
             }
 
-            var m_Team = await _context.Teams.FindAsync(id);
-            if (m_Team == null)
+            var m_Sport = await _context.Sports.FindAsync(id);
+            if (m_Sport == null)
             {
                 return NotFound();
             }
-            ViewData["SportId"] = new SelectList(_context.Sports, "Id", "Name", m_Team.SportId);
-            return View(m_Team);
+            ViewData["RepoId"] = new SelectList(_context.US_Sports, "Id", "RepoName", m_Sport.RepoId);
+            return View(m_Sport);
         }
 
-        // POST: Teams/Edit/5
+        // POST: Sport/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,SportId")] m_Team m_Team)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,RepoId")] m_Sport m_Sport)
         {
-            if (id != m_Team.Id)
+            if (id != m_Sport.Id)
             {
                 return NotFound();
             }
@@ -102,12 +102,12 @@ namespace SportsMVC.Controllers
             {
                 try
                 {
-                    _context.Update(m_Team);
+                    _context.Update(m_Sport);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!m_TeamExists(m_Team.Id))
+                    if (!m_SportExists(m_Sport.Id))
                     {
                         return NotFound();
                     }
@@ -118,11 +118,11 @@ namespace SportsMVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["SportId"] = new SelectList(_context.Sports, "Id", "Name", m_Team.SportId);
-            return View(m_Team);
+            ViewData["RepoId"] = new SelectList(_context.US_Sports, "Id", "RepoName", m_Sport.RepoId);
+            return View(m_Sport);
         }
 
-        // GET: Teams/Delete/5
+        // GET: Sport/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,31 +130,31 @@ namespace SportsMVC.Controllers
                 return NotFound();
             }
 
-            var m_Team = await _context.Teams
-                .Include(m => m.Sport)
+            var m_Sport = await _context.Sports
+                .Include(m => m.Repo)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (m_Team == null)
+            if (m_Sport == null)
             {
                 return NotFound();
             }
 
-            return View(m_Team);
+            return View(m_Sport);
         }
 
-        // POST: Teams/Delete/5
+        // POST: Sport/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var m_Team = await _context.Teams.FindAsync(id);
-            _context.Teams.Remove(m_Team);
+            var m_Sport = await _context.Sports.FindAsync(id);
+            _context.Sports.Remove(m_Sport);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool m_TeamExists(int id)
+        private bool m_SportExists(int id)
         {
-            return _context.Teams.Any(e => e.Id == id);
+            return _context.Sports.Any(e => e.Id == id);
         }
     }
 }
