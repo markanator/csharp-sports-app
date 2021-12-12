@@ -1,28 +1,19 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SportsLib.Interfaces;
 using SportsLib.Models;
-using SportsLib.US_Sports;
 using SportsMVC.Models;
-using SportsMVC.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-
 
 namespace SportsMVC.Controllers
 {
-    public class AdminController : Controller
+    public class SportsController : Controller
     {
         protected static USSportsRepo repo;
-        //protected AdminViewModel aVM;
-        public AdminController()
+        public SportsController(USSportsRepo _repo)
         {
-            repo ??= new USSportsRepo();
-            //aVM = new AdminViewModel(repo);
+            repo =_repo;
         }
 
-        // GET: Admin
         public ActionResult Index()
         {
             var t = repo.SportsList;
@@ -54,7 +45,7 @@ namespace SportsMVC.Controllers
             }
             catch
             {
-                return View();
+                return View("Admin/Sports/Create");
             }
         }
 
