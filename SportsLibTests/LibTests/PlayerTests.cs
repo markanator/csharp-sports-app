@@ -15,7 +15,8 @@ namespace SportsLibTests
 
         public PlayerTests()
         {
-            myPlayer = new Player(personName, rosterNum);
+            var testSport = new Mock<ISport>();
+            myPlayer = new Player(personName, rosterNum, testSport.Object);
         }
 
         [TestMethod]

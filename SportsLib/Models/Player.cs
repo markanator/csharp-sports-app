@@ -10,8 +10,11 @@ namespace SportsLib.Models
     {
         public int RosterNumber { get; set; }
 
-        public Player(string _name, int _rosterNum): base(_name)
+        public ISport Sport { get; }
+
+        public Player(string _name, int _rosterNum, ISport _sport ): base(_name)
         {
+            this.Sport = _sport;
             this.RosterNumber = _rosterNum;
         }
         public void UpdateRosterNumber(int _newNum)

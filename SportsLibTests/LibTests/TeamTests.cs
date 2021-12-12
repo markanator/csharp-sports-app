@@ -13,14 +13,21 @@ namespace SportsLibTests
         string teamName = "TEAM NAME";
         string sportsName = "Mock Sport Name";
         string sportsDesc = "Mock Sport Description";
-        Player member1 = new Player("Mark", 16);
+        Player member1;
+        string member1Name = "Mark";
+        int member1RosterNum = 16;
+        ISport mySport;
 
         public TeamTests()
         {
             var mockSport = new Mock<ISport>();
             mockSport.Setup(s => s.Name).Returns(sportsName);
             mockSport.Setup(s => s.Description).Returns(sportsDesc);
-            myTeam = new Team(mockSport.Object, teamName);
+            mySport = mockSport.Object;
+
+            myTeam = new Team(mySport, teamName);
+            member1 = new Player(member1Name, member1RosterNum, mySport);
+
             myTeam.TeamPlayers.Add(member1);
         }
 
@@ -46,8 +53,8 @@ namespace SportsLibTests
         public void AddsTeamMembers()
         {
             // arrange
-            Player p1 = new Player("Adrian", 7);
-            Player p2 = new Player("Luca", 22);
+            Player p1 = new Player("Adrian", 7, mySport);
+            Player p2 = new Player("Luca", 22, mySport);
             int teamMembersCountOG = myTeam.TeamPlayers.Count, teamMemberCountAfter1, teamMemberCountAfter2;
             // act
             myTeam.TeamPlayers.Add(p1);

@@ -55,7 +55,7 @@ namespace SportsLibTests
             // arrange
             int teamCountOG = mySport.SportTeams.Count, teamCountAfterInsert1;
             // act
-            mySport.AddSportTeam(DiamondDogs);
+            mySport.SportTeams.Add(DiamondDogs);
             teamCountAfterInsert1 = mySport.SportTeams.Count;
             // assert
             Assert.AreEqual(0, teamCountOG);

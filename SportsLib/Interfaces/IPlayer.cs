@@ -8,6 +8,7 @@ namespace SportsLib.Interfaces
 {
     public interface IPlayer
     {
+        ISport Sport { get; }
         int RosterNumber { get; set; }
     }
 }

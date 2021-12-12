@@ -1,37 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="SportsLib.Hockey">
-    <Position X="4.5" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Hockey.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SportsLib.Soccer">
-    <Position X="6.5" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Soccer.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SportsLib.Models.ProSports">
-    <Position X="2" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAQACAAAAgEAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\ProSports.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="SportsLib.Models.Sport">
-    <Position X="5.5" Y="3" Width="1.5" />
+    <Position X="6.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAggAAAAAAAEAAQAAAAAAAAAAAAAAAAAEAA=</HashCode>
       <FileName>Models\Sport.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SportsLib.Models.Player">
-    <Position X="12.25" Y="2.75" Width="1.5" />
+    <Position X="10.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
       <FileName>Models\Player.cs</FileName>
@@ -39,51 +17,80 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SportsLib.Models.Team">
-    <Position X="9" Y="3.25" Width="1.5" />
+    <Position X="8.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAABAAAAQAAAAgAAAAAAiAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAABACAAQAAAAAAAAAAAiAAAAAAAA=</HashCode>
       <FileName>Models\Team.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SportsLib.Models.Person">
-    <Position X="14.25" Y="2.75" Width="1.5" />
+    <Position X="12.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Person.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="SportsLib.Interfaces.ISport">
-    <Position X="5.5" Y="1" Width="1.5" />
+  <Class Name="SportsLib.Models.SportsRepo">
+    <Position X="4" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAQAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Models\SportsRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SportsLib.US_Sports.Hockey">
+    <Position X="5.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>US_Sports\Hockey.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SportsLib.US_Sports.Soccer">
+    <Position X="7.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>US_Sports\Soccer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SportsLib.US_Sports.US_SportsRepo">
+    <Position X="4" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>US_Sports\US_SportsRepo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SportsLib.Interfaces.ISport">
+    <Position X="6.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAggAAAAAAAEAAQAAAAAAAAAAAAAAAAAEAA=</HashCode>
       <FileName>Interfaces\ISport.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SportsLib.Interfaces.ITeam">
-    <Position X="9.25" Y="0.75" Width="1.5" />
+    <Position X="8.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAABAAAAQAAAAgAAAAAAiAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAABACAAQAAAAAAAAAAAiAAAAAAAA=</HashCode>
       <FileName>Interfaces\ITeam.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SportsLib.Interfaces.ISportsRepo">
-    <Position X="2" Y="0.75" Width="1.5" />
+    <Position X="4" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAQACAAAAgEAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAQAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
       <FileName>Interfaces\ISportsRepo.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SportsLib.Models.IPerson">
-    <Position X="14.25" Y="1.25" Width="1.5" />
+    <Position X="12.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IPerson.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SportsLib.Interfaces.IPlayer">
-    <Position X="12.25" Y="1.25" Width="1.5" />
+    <Position X="10.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IPlayer.cs</FileName>
