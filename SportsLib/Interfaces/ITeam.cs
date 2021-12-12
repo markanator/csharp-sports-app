@@ -8,7 +8,7 @@ namespace SportsLib.Interfaces
     {
         List<IPlayer> TeamPlayers { get; set; }
         string Name { get; set; }
-        ISport Sport { get; set; }
+        ISport Sport { get; }
         void AddPlayer(IPlayer _player);
         void RemovePlayer(IPlayer _player);
     }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace SportsLib.Models
 {
-    public abstract class Sport : ISport
+    public class Sport : ISport
     {
         public string Name { get; set; }
 
@@ -25,6 +25,15 @@ namespace SportsLib.Models
             this.Name = _name;
             this.Description = _desc;
             this.SportTeams = new List<ITeam>();
+        }
+
+        public void AddSportTeam(ITeam _team)
+        {
+            this.SportTeams.Add(_team);
+        }
+        public void RemoveSportTeam(ITeam _team)
+        {
+            this.SportTeams.Remove(_team);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace SportsLib.Models
     {
         public List<IPlayer> TeamPlayers { get; set; }
         public string Name { get; set; }
-        public ISport Sport { get; set; }
+        public ISport Sport { get; }
 
         public Team(ISport _sport) {
             this.Sport = _sport;
