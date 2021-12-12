@@ -14,6 +14,7 @@ namespace SportsLib.Models
 
         public Player(string _name, int _rosterNum, ISport _sport ): base(_name)
         {
+            this.Name = _name;
             this.Sport = _sport;
             this.RosterNumber = _rosterNum;
         }
