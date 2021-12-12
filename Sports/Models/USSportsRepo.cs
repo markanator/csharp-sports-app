@@ -21,8 +21,8 @@ namespace SportsMVC.Models
             Hockey ??= new Sport("Hockey", "Its Soccer on ice.");
             Soccer ??= new Sport("Soccer", "Its Foosball in real life.");
             // teams initial setup
-            BlackHawks ??= new Team(Hockey, "Chicago BlackHawks");
-            ChicagoFireFC ??= new Team(Soccer, "Chicago Fire FC");
+            BlackHawks      ??= new Team(Hockey, "Chicago BlackHawks");
+            ChicagoFireFC   ??= new Team(Soccer, "Chicago Fire FC");
             // team roster setup
             JonathanT = new Player("Jonathan T.", 19, Hockey);
             FranciscoC = new Player("Francisco C.", 1, Soccer);
