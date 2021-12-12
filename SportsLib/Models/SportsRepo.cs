@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SportsLib.Models
 {
-    public class SportsRepo : ISportsRepo
+    public abstract class SportsRepo : ISportsRepo
     {
         public List<ISport> SportsList { get; set; }
         public SportsRepo() { }

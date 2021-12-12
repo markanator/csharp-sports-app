@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace SportsLib.Models
 {
-    public class Sport : ISport
+    public abstract class Sport : ISport
     {
         public string Name { get; set; }
 

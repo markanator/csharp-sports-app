@@ -3,6 +3,7 @@ using SportsLib.Interfaces;
 using SportsLib.Models;
 using Moq;
 using System.Collections.Generic;
+using SportsLib.US_Sports;
 
 namespace SportsLibTests
 {
@@ -20,10 +21,10 @@ namespace SportsLibTests
         Team BravoTeam;
         string team2Name = "Bravo Team";
         // team members declarations
-        Player member1 = new Player("Mark", 16);
-        Player member2 = new Player("Luca", 22);
-        Player member3 = new Player("Josue", 9);
-        Player member4 = new Player("Adrian", 13);
+        Player member1;
+        Player member2;
+        Player member3;
+        Player member4;
         // REPO declaration
         SportsRepo sportsRepo;
 
@@ -41,20 +42,23 @@ namespace SportsLibTests
             AlphaTeam = new Team(mySport, team1Name);
             BravoTeam = new Team(mySport, team2Name);
 
+            // Players
+            member1 = new Player("Mark", 16, mySport);
+            member2 = new Player("Luca", 22, mySport);
+            member3 = new Player("Josue", 9, mySport);
+            member4 = new Player("Adrian", 13, mySport);
+
+
             AlphaTeam.AddPlayer(member1);
             AlphaTeam.AddPlayer(member2);
             BravoTeam.AddPlayer(member3);
             BravoTeam.AddPlayer(member4);
 
             // insert into mockSport
-            //testTeams.Add(AlphaTeam);
-            //testTeams.Add(BravoTeam);
-
-            // insert to 
             mySport.SportTeams.Add(AlphaTeam);
             mySport.SportTeams.Add(BravoTeam);
 
-            sportsRepo = new SportsRepo(new List<ISport>() { mySport });
+            sportsRepo = new US_SportsRepo(new List<ISport>() { mySport });
         }
 
         [TestMethod]

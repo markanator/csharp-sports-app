@@ -73,8 +73,9 @@ namespace SportsLibTests
         public void RemovesTeamMembers()
         {
             // arrange
-            Player p1 = new Player("Adrian", 7);
-            Player p2 = new Player("Luca", 22);
+            var mockSport = new Mock<ISport>();
+            Player p1 = new Player("Adrian", 7, mockSport.Object);
+            Player p2 = new Player("Luca", 22, mockSport.Object);
             myTeam.TeamPlayers.Add(p1);
             myTeam.TeamPlayers.Add(p2);
             int teamMembersCountOG = myTeam.TeamPlayers.Count, teamMemberCountAfter1;

@@ -4,4 +4,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="US_Sports\Hockey\**" />
+    <EmbeddedResource Remove="US_Sports\Hockey\**" />
+    <None Remove="US_Sports\Hockey\**" />
+  </ItemGroup>
+
 </Project>
