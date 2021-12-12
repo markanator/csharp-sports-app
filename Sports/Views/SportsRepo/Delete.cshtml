@@ -11,6 +11,12 @@
     <h4>m_SportsRepo</h4>
     <hr />
     <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RepoName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RepoName)
+        </dd>
     </dl>
     
     <form asp-action="Delete">

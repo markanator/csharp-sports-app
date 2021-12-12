@@ -1,27 +1,28 @@
 ﻿@model IEnumerable<SportsMVC.Models.m_SportsRepo>
 
 @{
-    ViewData["Title"] = "US Athletic Sports";
+    ViewData["Title"] = "US Sports";
 }
 
 <div class='d-flex justify-content-between align-items-center'>
-    <h1>@ViewData["Title"]</h1>
-    <p>
-        <a asp-action="Create">Create Regional Sports League</a>
-    </p>
+<h1>@ViewData["Title"]</h1>
+    <a asp-action="Create">Add Sports Region</a>
 </div>
-
 <table class="table">
     <thead>
         <tr>
-            <th>Name</th>
+            <th>
+                @Html.DisplayNameFor(model => model.RepoName)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>@item.RepoName</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepoName)
+            </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

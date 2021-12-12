@@ -54,7 +54,7 @@ namespace SportsMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id")] m_SportsRepo m_SportsRepo)
+        public async Task<IActionResult> Create([Bind("Id,RepoName")] m_SportsRepo m_SportsRepo)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace SportsMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id")] m_SportsRepo m_SportsRepo)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,RepoName")] m_SportsRepo m_SportsRepo)
         {
             if (id != m_SportsRepo.Id)
             {
