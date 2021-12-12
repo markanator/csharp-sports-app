@@ -6,6 +6,5 @@ namespace SportsLib.Interfaces
     {
         string Description { get; set; }
         string Name { get; set; }
-        List<ITeam> SportTeams { get; set; }
     }
 }

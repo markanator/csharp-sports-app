@@ -13,19 +13,15 @@ namespace SportsLibTests
         string teamName = "TEAM NAME";
         string sportsName = "Mock Sport Name";
         string sportsDesc = "Mock Sport Description";
-        List<ITeam> fakeTeamMembers;
-        Player member1;
-        Player member2;
+        Player member1 = new Player("Mark", 16);
 
         public TeamTests()
         {
-            fakeTeamMembers = new List<ITeam>();
-            member1 = new Player("Mark", 16);
             var mockSport = new Mock<ISport>();
             mockSport.Setup(s => s.Name).Returns(sportsName);
             mockSport.Setup(s => s.Description).Returns(sportsDesc);
-            mockSport.Setup(s => s.SportTeams).Returns(fakeTeamMembers);
-            myTeam = new Team(teamName, mockSport.Object);
+            myTeam = new Team(mockSport.Object, teamName);
+            myTeam.TeamPlayers.Add(member1);
         }
 
         [TestMethod]
@@ -38,6 +34,13 @@ namespace SportsLibTests
         {
             Assert.AreEqual(sportsName, myTeam.Sport.Name);
             Assert.AreEqual(sportsDesc, myTeam.Sport.Description);
+        }
+        [TestMethod]
+        public void GetsTeamPlayers()
+        {
+            Assert.AreEqual(1, myTeam.TeamPlayers.Count);
+            Assert.AreEqual(member1.Name, ((Player)myTeam.TeamPlayers[0]).Name);
+            Assert.AreEqual(member1.RosterNumber, myTeam.TeamPlayers[0].RosterNumber);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace SportsLib.Models
             this.Sport = _sport;
             this.TeamPlayers = new List<IPlayer>();
         }
-        public Team(string _name, ISport _sport)
+        public Team(ISport _sport, string _name)
         {
             this.Name = _name;
             this.Sport = _sport;
