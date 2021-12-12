@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sports", "Sports\Sports.csproj", "{D797F45A-CC3B-402A-B5FD-3BE3C90396C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsMVC", "Sports\SportsMVC.csproj", "{D797F45A-CC3B-402A-B5FD-3BE3C90396C1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsLib", "SportsLib\SportsLib.csproj", "{40A7D906-FCF6-4892-9E31-FC765CFE405C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsLibTests", "SportsLibTests\SportsLibTests.csproj", "{E4069866-49F5-4D4C-AFD6-F80029713601}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsLibTests", "SportsLibTests\SportsLibTests.csproj", "{E4069866-49F5-4D4C-AFD6-F80029713601}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
