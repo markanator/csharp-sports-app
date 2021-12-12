@@ -9,15 +9,15 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SportsLib.Models.Player">
-    <Position X="10.5" Y="3.5" Width="1.5" />
+    <Position X="12.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAABACAAAAAAAA=</HashCode>
       <FileName>Models\Player.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SportsLib.Models.Team">
-    <Position X="8.5" Y="3.5" Width="1.5" />
+    <Position X="10.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAABACAAQAAAAAAAAAAAiAAAAAAAA=</HashCode>
       <FileName>Models\Team.cs</FileName>
@@ -25,7 +25,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SportsLib.Models.Person">
-    <Position X="12.5" Y="3.5" Width="1.5" />
+    <Position X="14.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Person.cs</FileName>
@@ -69,7 +69,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="SportsLib.Interfaces.ITeam">
-    <Position X="8.5" Y="1" Width="1.5" />
+    <Position X="10.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAABACAAQAAAAAAAAAAAiAAAAAAAA=</HashCode>
       <FileName>Interfaces\ITeam.cs</FileName>
@@ -83,16 +83,16 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="SportsLib.Models.IPerson">
-    <Position X="12.5" Y="1" Width="1.5" />
+    <Position X="14.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IPerson.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SportsLib.Interfaces.IPlayer">
-    <Position X="10.5" Y="1" Width="1.5" />
+    <Position X="12.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
       <FileName>Interfaces\IPlayer.cs</FileName>
     </TypeIdentifier>
   </Interface>
