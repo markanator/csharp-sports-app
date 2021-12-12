@@ -1,0 +1,34 @@
+﻿@model IEnumerable<SportsLib.Interfaces.ISport>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Admin Sports Management";
+}
+
+<div class='container'>
+    <h1>@ViewData["Title"]</h1>
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Sport</th>
+                <th>Description</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.Name }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Name }) |
+            </td>
+        </tr>
+}
+        </tbody>
+    </table>
+</div>
