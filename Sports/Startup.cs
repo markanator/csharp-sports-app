@@ -61,7 +61,10 @@ namespace Sports
                 endpoints.MapControllerRoute(
                     name: "sports",
                     pattern: "{controller=Sports}/{action=Index}/{id?}");
-                
+                endpoints.MapControllerRoute(
+                    name: "teams",
+                    pattern: "{controller=Teams}/{action=Index}/{id?}");
+
             });
         }
     }

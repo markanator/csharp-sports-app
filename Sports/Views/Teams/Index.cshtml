@@ -1,0 +1,37 @@
+﻿@model IEnumerable<SportsLib.Interfaces.ITeam>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Teams Management";
+}
+
+<div class='container'>
+    <div class='d-flex justify-content-between align-items-center my-3'>
+        <h1>@ViewData["Title"]</h1>
+        <a asp-action="Create" class='btn btn-primary btn-sm'>Create Team</a>
+    </div>
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Team</th>
+                <th>Sport</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sport.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {  id=item.Name }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.Name }) |
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
