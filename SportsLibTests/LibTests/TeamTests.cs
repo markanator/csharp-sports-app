@@ -42,5 +42,44 @@ namespace SportsLibTests
             Assert.AreEqual(member1.Name, ((Player)myTeam.TeamPlayers[0]).Name);
             Assert.AreEqual(member1.RosterNumber, myTeam.TeamPlayers[0].RosterNumber);
         }
+        [TestMethod]
+        public void AddsTeamMembers()
+        {
+            // arrange
+            Player p1 = new Player("Adrian", 7);
+            Player p2 = new Player("Luca", 22);
+            int teamMembersCountOG = myTeam.TeamPlayers.Count, teamMemberCountAfter1, teamMemberCountAfter2;
+            // act
+            myTeam.TeamPlayers.Add(p1);
+            teamMemberCountAfter1 = myTeam.TeamPlayers.Count;
+            myTeam.TeamPlayers.Add(p2);
+            teamMemberCountAfter2 = myTeam.TeamPlayers.Count;
+            // assert
+            Assert.AreEqual(1, teamMembersCountOG);
+            Assert.AreEqual(member1.Name, ((Player)myTeam.TeamPlayers[0]).Name);
+            Assert.AreEqual(2, teamMemberCountAfter1);
+            Assert.AreEqual(p1.Name, ((Player)myTeam.TeamPlayers[1]).Name);
+            Assert.AreEqual(3, teamMemberCountAfter2);
+            Assert.AreEqual(p2.Name, ((Player)myTeam.TeamPlayers[2]).Name);
+        }
+        [TestMethod]
+        public void RemovesTeamMembers()
+        {
+            // arrange
+            Player p1 = new Player("Adrian", 7);
+            Player p2 = new Player("Luca", 22);
+            myTeam.TeamPlayers.Add(p1);
+            myTeam.TeamPlayers.Add(p2);
+            int teamMembersCountOG = myTeam.TeamPlayers.Count, teamMemberCountAfter1;
+            // act
+            myTeam.TeamPlayers.Remove(p1);
+            teamMemberCountAfter1 = myTeam.TeamPlayers.Count;
+
+            // assert
+            Assert.AreEqual(3, teamMembersCountOG);
+            Assert.AreEqual(member1.Name, ((Player)myTeam.TeamPlayers[0]).Name);
+            Assert.AreEqual(2, teamMemberCountAfter1);
+            Assert.AreEqual(p2.Name, ((Player)myTeam.TeamPlayers[1]).Name);
+        }
     }
 }
