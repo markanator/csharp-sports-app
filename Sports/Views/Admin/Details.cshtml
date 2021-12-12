@@ -4,7 +4,10 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>@Model.Name Details</h1>
+<div class='d-flex justify-content-between align-items-center my-3'>
+    <h1>@Model.Name @ViewData["Title"]</h1>
+    @Html.ActionLink("Delete", "Delete", new {  id=Model.Name })
+</div>
 <hr />
 <div>
     <dl class="row">

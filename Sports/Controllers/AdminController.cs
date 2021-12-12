@@ -45,10 +45,11 @@ namespace SportsMVC.Controllers
         // POST: Admin/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Sport _sport)
         {
             try
             {
+                repo.AddSport(_sport);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -57,19 +58,23 @@ namespace SportsMVC.Controllers
             }
         }
 
-        // GET: Admin/Edit/5
-        public ActionResult Edit(int id)
+        // GET: Admin/Edit/soccer
+        public ActionResult Edit(string id)
         {
-            return View();
+            var fSport = repo.SportsList.Where(s => s.Name == id).FirstOrDefault();
+            return View(fSport);
         }
 
         // POST: Admin/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(string id, Sport _sport)
         {
             try
             {
+                var fSport = repo.SportsList.Where(s => s.Name == id).FirstOrDefault();
+                fSport.Name = _sport.Name;
+                fSport.Description = _sport.Description;
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -79,23 +84,27 @@ namespace SportsMVC.Controllers
         }
 
         // GET: Admin/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
-            return View();
+            var fSport = repo.SportsList.Where(s => s.Name == id).FirstOrDefault();
+
+            return View(fSport);
         }
 
         // POST: Admin/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(string id, Sport _sport)
         {
             try
             {
+                var fSport = repo.SportsList.Where(s => s.Name == id).FirstOrDefault();
+                repo.RemoveSport(fSport);
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return RedirectToAction(nameof(Index));
             }
         }
     }
