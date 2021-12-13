@@ -1,13 +1,12 @@
 ﻿@model SportsMVC.Models.m_Team
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Team Details";
 }
 
-<h1>Details</h1>
+<h1>@ViewData["Title"]: @Model.Name</h1>
 
 <div>
-    <h4>m_Team</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">

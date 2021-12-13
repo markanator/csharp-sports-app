@@ -1,14 +1,13 @@
 ﻿@model IEnumerable<SportsMVC.Models.m_Player>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Player Management";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<div class='d-flex justify-content-between align-items-center'>
+    <h1>@ViewData["Title"]</h1>
+    <a asp-action="Create">Add a Player</a>
+</div>
 <table class="table">
     <thead>
         <tr>
