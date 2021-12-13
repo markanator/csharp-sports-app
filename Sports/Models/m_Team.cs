@@ -14,7 +14,7 @@ namespace SportsMVC.Models
         [Required]
         public int SportId { get; set; }
         public m_Sport Sport { get; set; }
-        [Required]
+
         public List<m_Player> TeamPlayers { get; set; }
 
     }
