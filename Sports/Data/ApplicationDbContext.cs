@@ -10,9 +10,9 @@ namespace SportsMVC.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        public DbSet<m_Sport> Sports { get; set; }
-        public DbSet<m_Team> Teams { get; set; }
-        public DbSet<m_Player> Player { get; set; }
-        public DbSet<m_SportsRepo> US_Sports { get; set; }
+        public virtual DbSet<m_Sport> Sports { get; set; }
+        public virtual DbSet<m_Team> Teams { get; set; }
+        public virtual DbSet<m_Player> Player { get; set; }
+        public virtual DbSet<m_SportsRepo> US_Sports { get; set; }
     }
 }

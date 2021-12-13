@@ -11,11 +11,23 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RepoName)
+            US Sports Region
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.RepoName)
         </dd>
+        @if (Model.SportsList != null)
+       {
+           @foreach (var item in Model.SportsList)
+           {
+               <dt class = "col-sm-2">
+                    Sport in Region:
+               </dt>
+               <dd class = "col-sm-10">
+                    @item.Name
+               </dd>
+           }
+       }
     </dl>
 </div>
 <div>

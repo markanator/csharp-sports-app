@@ -24,17 +24,40 @@
     </dl>
     @if (Model.TeamPlayers != null)
    {
+       <table class='table'>
+           <thead>
+        <tr>
+            <th>
+                Player Name
+            </th>
+            <th>
+                Roster #
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+       
+
        <dl class="row">
         <dt class = "col-sm-2">
             Player
         </dt>
        @foreach (var player in Model.TeamPlayers)
       {
-          <dd class = "col-sm-2">
-            @player.Name - #@player.Roster
-        </dd>
+          <tr>
+            <td>
+                @player.Name
+            </td>
+            <td>
+                @player.Roster
+            </td>
+            <td>
+                <a asp-controller='Players' asp-action="Delete" asp-route-id="@player.Id">Remove</a>
+            </td>
+        </tr>
       }
       </dl>
+      </table>
    }
 </div>
 <div>
