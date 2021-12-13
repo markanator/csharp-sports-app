@@ -23,6 +23,20 @@
             @Html.DisplayFor(model => model.Sport.Name)
         </dd>
     </dl>
+    @if (Model.TeamPlayers != null)
+   {
+       <dl class="row">
+        <dt class = "col-sm-2">
+            Player
+        </dt>
+       @foreach (var player in Model.TeamPlayers)
+      {
+          <dd class = "col-sm-2">
+            @player.Name - #@player.Roster
+        </dd>
+      }
+      </dl>
+   }
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |

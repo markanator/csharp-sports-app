@@ -1,10 +1,10 @@
 ﻿@model SportsMVC.Models.m_Sport
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Sport Details";
 }
 
-<h1>Details</h1>
+<h1>@ViewData["Title"] - @Model.Name</h1>
 
 <div>
     <h4>m_Sport</h4>
@@ -28,6 +28,18 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Repo.RepoName)
         </dd>
+        @if (Model.SportTeams != null)
+       {
+           @foreach (var item in Model.SportTeams)
+          {
+              <dt class = "col-sm-2">
+                Team Name(s)
+              </dt>
+              <dd class = "col-sm-10">
+                @item.Name
+              </dd>
+          }
+       }
     </dl>
 </div>
 <div>

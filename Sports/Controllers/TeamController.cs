@@ -34,15 +34,15 @@ namespace SportsMVC.Controllers
                 return NotFound();
             }
 
-            var m_Team = await _context.Teams
+            var myTeam = await _context.Teams
                 .Include(m => m.Sport)
+                .Include(m => m.TeamPlayers)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (m_Team == null)
+            if (myTeam == null)
             {
                 return NotFound();
             }
-
-            return View(m_Team);
+            return View(myTeam);
         }
 
         // GET: Team/Create

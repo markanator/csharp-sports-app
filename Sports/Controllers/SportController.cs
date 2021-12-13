@@ -36,6 +36,7 @@ namespace SportsMVC.Controllers
 
             var m_Sport = await _context.Sports
                 .Include(m => m.Repo)
+                .Include(m => m.SportTeams)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (m_Sport == null)
             {

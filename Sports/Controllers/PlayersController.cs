@@ -37,6 +37,7 @@ namespace SportsMVC.Controllers
             var m_Player = await _context.Player
                 .Include(m => m.Sport)
                 .Include(m => m.Team)
+                .Include(m => m.Team.TeamPlayers)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (m_Player == null)
             {
